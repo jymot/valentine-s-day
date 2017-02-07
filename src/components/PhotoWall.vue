@@ -1,27 +1,33 @@
 <template>
     <div class="photo-wall">
 
-      <el-row :gutter="20">
-        <el-col :span="6">
+      <el-row :gutter="20" type="flex" justify="center">
+        <el-col :xs="{span:6}" :sm="{span:3}">
           <photo image="../assets/logo.png" animation="top"/>
         </el-col>
-        <el-col :span="6" :offset="6">
+        <el-col :xs="{span:6, offset:8}" :sm="{span:3, offset:8}">
           <photo image="../assets/logo.png" animation="right"/>
         </el-col>
       </el-row>
 
-      <el-row :gutter="20" >
-        <el-col :span="6" :offset="6">
+      <el-row :gutter="20" type="flex" justify="start">
+        <el-col :xs="{span:6, offset:5}" :sm="{span:3, offset:7}">
           <photo image="../assets/logo.png" animation="left"/>
         </el-col>
-        <el-col :span="6" :offset="6">
+        <el-col :xs="{span:6, offset:3}" :sm="{span:3, offset:4}">
           <photo image="../assets/logo.png" animation="top"/>
         </el-col>
       </el-row>
 
-      <el-row :gutter="20" type="flex" justify="center" align="middle">
-        <el-col :xs="{span:6, offset:12}" :sm="{span:6, offset:6}">
+      <el-row :gutter="20" type="flex" justify="center">
+        <el-col :xs="{span:6, offset:1}" :sm="{span:3, offset:2}">
           <photo image="../assets/logo.png" animation="bottom"/>
+        </el-col>
+      </el-row>
+
+      <el-row :gutter="20" type="flex" justify="start">
+        <el-col :xs="{span:6, offset:1}" :sm="{span:3, offset:6}">
+          <photo image="../assets/logo.png" animation="left"/>
         </el-col>
       </el-row>
 
@@ -56,13 +62,6 @@
     margin-right: 10px;
   }
 
-  @media(min-width: 768px){
-    .photo-wall {
-      margin-left: 100px;
-      margin-right: 100px;
-    }
-  }
-
   .el-row {
     margin-bottom: 20px;
     &:last-child {
@@ -71,28 +70,6 @@
   }
   .el-col {
     border-radius: 4px;
-  }
-  .grid-content {
-    min-height: 36px;
-  }
-  .row-bg {
-    padding: 10px 0;
-  }
-
-
-  .image {
-    width: 100%;
-    display: block;
-  }
-
-  .clearfix:before,
-  .clearfix:after {
-      display: table;
-      content: "";
-  }
-
-  .clearfix:after {
-      clear: both
   }
 
 </style>
