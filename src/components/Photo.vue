@@ -24,8 +24,12 @@
             return "../assets/logo.png"
           },
           animationDirection(){
-            let direction = this.animation || 'right'
-            return 'slide-fade-' + direction
+            let anim = this.animation || 'right'
+            console.log(anim);
+            if(anim == 'rotate'){
+               return 'rotate-fade'
+            }
+            return 'slide-fade-' + anim
           }
         },
 
@@ -61,12 +65,14 @@
 
   /* 可以设置不同的进入和离开动画 */
   /* 设置持续时间和动画函数 */
+  .rotate-fade-enter-active,
   .slide-fade-left-enter-active,
   .slide-fade-right-enter-active,
   .slide-fade-top-enter-active,
   .slide-fade-bottom-enter-active {
     transition: all .8s ease;
   }
+  .rotate-fade-leave-active,
   .slide-fade-left-leave-active,
   .slide-fade-right-leave-active,
   .slide-fade-top-leave-active,
@@ -91,6 +97,12 @@
   .slide-fade-bottom-enter,
   .slide-fade-bottom-leave-active {
     transform: translateY(20px);
+    opacity: 0;
+  }
+
+  .rotate-fade-enter,
+  .rotate-fade-leave-active {
+    transform: rotate(100deg);
     opacity: 0;
   }
 

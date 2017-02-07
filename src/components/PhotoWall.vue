@@ -15,13 +15,13 @@
           <photo image="../assets/logo.png" animation="left"/>
         </el-col>
         <el-col :xs="{span:6, offset:3}" :sm="{span:3, offset:4}">
-          <photo image="../assets/logo.png" animation="top"/>
+          <photo image="../assets/logo.png" animation="bottom"/>
         </el-col>
       </el-row>
 
       <el-row :gutter="20" type="flex" justify="center">
         <el-col :xs="{span:6, offset:1}" :sm="{span:3, offset:2}">
-          <photo image="../assets/logo.png" animation="bottom"/>
+          <photo image="../assets/logo.png" animation="rotate"/>
         </el-col>
       </el-row>
 
