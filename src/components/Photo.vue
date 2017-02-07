@@ -75,7 +75,7 @@
   }
   .slide-fade-left-enter,
   .slide-fade-left-leave-active {
-    transform: translateX(-10px);
+    transform: translateX(-20px);
     opacity: 0;
   }
   .slide-fade-right-enter,
@@ -85,12 +85,12 @@
   }
   .slide-fade-top-enter,
   .slide-fade-top-leave-active {
-    transform: translateY(-10px);
+    transform: translateY(-20px);
     opacity: 0;
   }
   .slide-fade-bottom-enter,
   .slide-fade-bottom-leave-active {
-    transform: translateY(10px);
+    transform: translateY(20px);
     opacity: 0;
   }
 

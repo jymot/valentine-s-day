@@ -3,51 +3,25 @@
 
       <el-row :gutter="20">
         <el-col :span="6">
-          <photo image="../assets/logo.png" />
+          <photo image="../assets/logo.png" animation="top"/>
         </el-col>
         <el-col :span="6" :offset="6">
-          <transition name="slide-fade-right">
-            <div v-if="show" class="grid-content">
-
-              <el-card :body-style="{ padding: '0px' }">
-                <img src="../assets/logo.png" class="image">
-              </el-card>
-
-            </div>
-          </transition>
+          <photo image="../assets/logo.png" animation="right"/>
         </el-col>
       </el-row>
 
       <el-row :gutter="20" >
         <el-col :span="6" :offset="6">
-          <div class="grid-content">
-
-            <el-card :body-style="{ padding: '0px' }">
-              <img src="../assets/logo.png" class="image">
-            </el-card>
-
-          </div>
+          <photo image="../assets/logo.png" animation="left"/>
         </el-col>
         <el-col :span="6" :offset="6">
-          <div class="grid-content">
-
-            <el-card :body-style="{ padding: '0px' }">
-              <img src="../assets/logo.png" class="image">
-            </el-card>
-
-          </div>
+          <photo image="../assets/logo.png" animation="top"/>
         </el-col>
       </el-row>
 
       <el-row :gutter="20" type="flex" justify="center" align="middle">
         <el-col :xs="{span:6, offset:12}" :sm="{span:6, offset:6}">
-          <div class="grid-content">
-
-            <el-card :body-style="{ padding: '0px' }">
-              <img src="../assets/logo.png" class="image">
-            </el-card>
-
-          </div>
+          <photo image="../assets/logo.png" animation="bottom"/>
         </el-col>
       </el-row>
 
