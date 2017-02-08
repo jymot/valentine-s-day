@@ -25,7 +25,6 @@
           },
           animationDirection(){
             let anim = this.animation || 'right'
-            console.log(anim);
             if(anim == 'rotate'){
                return 'rotate-fade'
             }

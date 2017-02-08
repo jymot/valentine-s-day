@@ -4,9 +4,9 @@
        @mousemove="onDrag"
        @touchmove="onDrag">
 
-    <el-carousel :interval="4000" type="card" height="200px">
+    <el-carousel :interval="4000" type="card" height="200px" class="my-carousel">
       <el-carousel-item v-for="item in 6">
-        <h3>{{ item }}</h3>
+        <img src="./assets/logo.png">
       </el-carousel-item>
     </el-carousel>
 
@@ -70,6 +70,19 @@ body {
   color: #2c3e50;
 }
 
+.my-carousel {
+  margin-top: 10px;
+  margin-bottom:10px;
+}
+
+@media(min-width: 768px){
+  .my-carousel {
+    margin-left:100px;
+    margin-right:100px;
+    margin-bottom:50px;
+  }
+}
+
 .el-carousel__item h3 {
   color: #475669;
   font-size: 14px;
@@ -84,6 +97,12 @@ body {
 
 .el-carousel__item:nth-child(2n+1) {
   background-color: #d3dce6;
+}
+
+.el-carousel__item--card.is-active {
+  -moz-box-shadow: 0px 3px 5px#999;
+  -webkit-box-shadow: 0px 3px 5px#999;
+  box-shadow: 0px 3px 5px #999;
 }
 
 </style>
