@@ -1,21 +1,20 @@
 <template>
     <div>
-      <transition :name="animationDirection">
-        <div v-if="show" class="grid-content">
-
-          <el-card :body-style="{ padding: '0px' }">
+      <div class="grid-content">
+        <transition :name="animationDirection">
+          <el-card v-show="show" :body-style="{ padding: '0px' }">
             <img src="../assets/logo.png" class="image">
           </el-card>
-
-        </div>
-      </transition>
+        </transition>
+      </div>
     </div>
 </template>
 <script>
     export default{
         data(){
           return{
-              show: false
+              show: false,
+              cmpHeight: 36
           }
         },
 
@@ -23,6 +22,7 @@
           imageSrc(){
             return "../assets/logo.png"
           },
+
           animationDirection(){
             let anim = this.animation || 'right'
             if(anim == 'rotate'){
@@ -33,7 +33,28 @@
         },
 
         mounted(){
-          this.show = true
+          //this.show = true
+        },
+
+        updated(){
+          if(this.cmpHeight != this.$el.clientHeight){
+              this.cmpHeight = this.$el.clientHeight
+              this.$el.style.height = this.cmpHeight + "px"
+            }
+        },
+
+        methods: {
+          showAnim(){
+            this.show = true
+          },
+
+          hideAnim(height){
+            this.show = false
+          },
+
+          isShow(){
+            return this.show
+          }
         },
 
         props: [
