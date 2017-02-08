@@ -1,5 +1,10 @@
 <template>
-  <div id="app">
+  <div id="app"
+       @touchstart="startDrag"
+       @mouseup="endDrag"
+       @mousemove="onDrag"
+       @touchmove="onDrag"
+       @touchend="endDrag">
 
     <el-carousel :interval="4000" type="card" height="200px" class="my-carousel">
       <el-carousel-item v-for="item in 6">
@@ -7,7 +12,7 @@
       </el-carousel-item>
     </el-carousel>
 
-    <photo-wall/>
+    <photo-wall ref="photowall"/>
 
   </div>
 </template>
@@ -27,9 +32,24 @@ export default {
     this.show = true
   },
   mounted () {
-
+    window.onscroll = this.onScroll
   },
   methods: {
+      startDrag(event){
+        this.$refs.photowall.startDrag(event, this.$el.getBoundingClientRect())
+      },
+
+      onDrag(event){
+        this.$refs.photowall.onDrag(event, this.$el.getBoundingClientRect())
+      },
+
+      endDrag(event){
+        this.$refs.photowall.endDrag(event, this.$el.getBoundingClientRect())
+      },
+
+      onScroll(){
+        this.$refs.photowall.onScroll(this.$el.getBoundingClientRect())
+      }
 
   },
   components: {
