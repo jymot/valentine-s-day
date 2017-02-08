@@ -6,6 +6,8 @@
        @touchmove="onDrag"
        @touchend="endDrag">
 
+    <!--<audio src="http://zw.wangchao.im/static/bgmusic.mp3" autoplay="true" loop="true"></audio>-->
+
     <el-carousel :interval="4000" type="card" height="200px" class="my-carousel">
       <el-carousel-item v-for="item in 6">
         <img src="./assets/logo.png">
@@ -25,11 +27,10 @@ export default {
   name: 'app',
   data () {
     return {
-      show: true
     };
   },
   created () {
-    this.show = true
+
   },
   mounted () {
     window.onscroll = this.onScroll

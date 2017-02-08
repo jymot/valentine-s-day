@@ -2,35 +2,35 @@
     <div class="photo-wall">
 
       <el-row :gutter="20" type="flex" justify="start">
-        <el-col :xs="{span:8, offset:4}" :sm="{span:4, offset:8}">
-          <photo image="../assets/logo.png" animation="top" ref="photo"/>
+        <el-col :xs="{span:10, offset:4}" :sm="{span:6, offset:8}">
+          <photo image="./static/wall0.jpg" animation="top" ref="photo"/>
         </el-col>
       </el-row>
 
       <el-row :gutter="20" type="flex" justify="center">
-        <el-col :xs="{span:8, offset:8}" :sm="{span:4, offset:8}">
-          <photo image="../assets/logo.png" animation="right" ref="photo1"/>
+        <el-col :xs="{span:10, offset:8}" :sm="{span:6, offset:8}">
+          <photo image="./static/wall1.jpg" animation="right" ref="photo1"/>
         </el-col>
       </el-row>
 
       <el-row :gutter="20" type="flex" justify="start">
         <el-col :xs="{span:8, offset:3}" :sm="{span:4, offset:7}">
-          <photo image="../assets/logo.png" animation="left" ref="photo2"/>
+          <photo image="./static/wall2.jpg" animation="left" ref="photo2"/>
         </el-col>
         <el-col :xs="{span:8, offset:4}" :sm="{span:4, offset:4}">
-          <photo image="../assets/logo.png" animation="bottom" ref="photo3"/>
+          <photo image="./static/wall3.jpg" animation="bottom" ref="photo3"/>
         </el-col>
       </el-row>
 
       <el-row :gutter="20" type="flex" justify="center">
-        <el-col :xs="{span:8, offset:1}" :sm="{span:4, offset:2}">
-          <photo image="../assets/logo.png" animation="rotate" ref="photo4"/>
+        <el-col :xs="{span:10, offset:1}" :sm="{span:6, offset:2}">
+          <photo image="./static/wall4.jpg" animation="rotate" ref="photo4"/>
         </el-col>
       </el-row>
 
       <el-row :gutter="20" type="flex" justify="start">
         <el-col :xs="{span:8, offset:1}" :sm="{span:4, offset:6}">
-          <photo image="../assets/logo.png" animation="left" ref="photo5"/>
+          <photo image="./static/wall5.jpg" animation="left" ref="photo5"/>
         </el-col>
       </el-row>
 
@@ -98,6 +98,9 @@
 
           onDrag(event, rect){
             if(rect.top == 0){
+              return
+            }
+            if(!event.changedTouches || event.changedTouches.length == 0){
               return
             }
             let currentY = event.changedTouches[0].clientY
