@@ -1,10 +1,13 @@
 <template>
     <div class="photo-wall">
 
-      <el-row :gutter="20" type="flex" justify="center">
-        <el-col :xs="{span:6}" :sm="{span:3}">
+      <el-row :gutter="20" type="flex" justify="start">
+        <el-col :xs="{span:6, offset:4}" :sm="{span:3, offset:8}">
           <photo image="../assets/logo.png" animation="top"/>
         </el-col>
+      </el-row>
+
+      <el-row :gutter="20" type="flex" justify="center">
         <el-col :xs="{span:6, offset:8}" :sm="{span:3, offset:8}">
           <photo image="../assets/logo.png" animation="right"/>
         </el-col>
@@ -63,7 +66,7 @@
   }
 
   .el-row {
-    margin-bottom: 20px;
+    margin-bottom: 200px;
     &:last-child {
       margin-bottom: 0;
     }

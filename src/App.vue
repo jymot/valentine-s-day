@@ -72,7 +72,7 @@ body {
 
 .my-carousel {
   margin-top: 10px;
-  margin-bottom:10px;
+  margin-bottom:20px;
 }
 
 @media(min-width: 768px){
