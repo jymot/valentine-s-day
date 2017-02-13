@@ -1,9 +1,9 @@
 <template>
     <div class="love-container">
       <div class="mask-container">
-        <img src="../assets/head.png" width="50%"/>
+        <img src="../assets/head.png" class="head-img"/>
       </div>
-      <canvas style="background: rgba(255,255,155,0); "/>
+      <canvas />
     </div>
 </template>
 <style scoped>
@@ -16,6 +16,8 @@
 .mask-container{
   height: 100%;
   width:100%;
+  padding-top: 20px;
+  z-index: 10;
   position:absolute;
   display:flex;
   flex-direction: column;
@@ -30,6 +32,10 @@
   justify-content: center;
   overflow: hidden;
 }
+.head-img{
+  width: 200px;
+}
+
 </style>
 <script>
     export default{

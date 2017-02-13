@@ -6,7 +6,7 @@
        @touchmove="onDrag"
        @touchend="endDrag">
 
-    <!--<audio src="http://zw.wangchao.im/static/bgmusic.mp3" autoplay="true" loop="true"></audio>-->
+    <audio src="./static/bgmusic.mp3" autoplay="true" loop="true"></audio>
 
     <!--<el-carousel indicator-position="outside" class="my-carousel">-->
       <!--<el-carousel-item v-for="item in 6">-->
