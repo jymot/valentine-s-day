@@ -1,14 +1,14 @@
 <template>
     <div class="love-container">
       <div class="mask-container">
-        <img src="../assets/logo.png"/>
+        <img src="../assets/head.png" width="50%"/>
       </div>
-      <canvas/>
+      <canvas style="background: rgba(255,255,155,0); "/>
     </div>
 </template>
 <style scoped>
 .love-container{
-  background-color: rgba(196, 1, 9, 0.2);
+  background-color: rgba(196, 1, 9, 1);
   background-image: -webkit-radial-gradient(center ellipse, rgba(196,1,9,0) 0%, rgba(118,0,0,1) 100%);
   background-image: radial-gradient(ellipse at center, rgba(196,1,9,0) 0%, rgba(118,0,0,1) 100%);
   height: 100%;
@@ -90,7 +90,7 @@
             //setInterval
             setInterval(()=>{
               ctx.save()
-              ctx.fillStyle = "rgba(196, 0, 0, 0)";
+              ctx.fillStyle = "rgba(118, 0, 0, 0.2)";
               ctx.fillRect(0, 0, O, Q);
               for (let i = v; i--;) {
                 f = e[i];

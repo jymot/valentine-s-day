@@ -74,8 +74,6 @@ html {
   height: 100%;
 }
 
-  <!--background: url('./assets/bg.png');-->
-
 body {
   margin: 0px !important;
   padding: 0px;
