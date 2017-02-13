@@ -6,7 +6,7 @@
        @touchmove="onDrag"
        @touchend="endDrag">
 
-    <audio src="./static/bgmusic.mp3" autoplay="true" loop="true"></audio>
+    <audio ref="myaudio" src="./static/bgmusic.mp3" loop="true"></audio>
 
     <!--<el-carousel indicator-position="outside" class="my-carousel">-->
       <!--<el-carousel-item v-for="item in 6">-->
@@ -43,6 +43,8 @@ export default {
   },
   mounted () {
     //window.onscroll = this.onScroll
+    this.$refs.myaudio.loop = true;
+    this.$refs.myaudio.play();
   },
   methods: {
       startDrag(event){
@@ -80,7 +82,6 @@ body {
   background-color: rgba(196,1,9,1);
   background-image: -webkit-radial-gradient(center ellipse, rgba(196,1,9,0) 0%, rgba(118,0,0,1) 100%);
   background-image: radial-gradient(ellipse at center, rgba(196,1,9,0) 0%, rgba(118,0,0,1) 100%);
-  background-attachment: fixed;
   background-repeat: repeat-y;
   background-position: top;
   background-size: 100% auto;
