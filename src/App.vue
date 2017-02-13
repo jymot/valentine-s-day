@@ -6,7 +6,7 @@
        @touchmove="onDrag"
        @touchend="endDrag">
 
-    <audio controls="controls" ref="myaudio" loop="loop" style="display: none">
+    <audio controls="controls" src="./static/bgmusic.mp3" ref="myaudio" id="myaudio" autoplay preload loop="loop" style="display: none">
       <source src="./static/bgmusic.mp3" type="audio/ogg" />
     </audio>
     <!--<el-carousel indicator-position="outside" class="my-carousel">-->
@@ -45,8 +45,26 @@ export default {
   mounted () {
     //window.onscroll = this.onScroll
     this.$refs.myaudio.loop = true;
-    this.$refs.myaudio.src = "./static/bgmusic.mp3";
-    this.$refs.myaudio.play();
+    //this.$refs.myaudio.src = "./static/bgmusic.mp3";
+    //this.$refs.myaudio.play();
+
+    function audioAutoPlay(id){
+      var audio = document.getElementById(id),
+          play = function(){
+              audio.play();
+              document.removeEventListener("touchstart",play, false);
+          };
+      audio.play();
+      document.addEventListener("WeixinJSBridgeReady", function () {
+          play();
+      }, false);
+      document.addEventListener('YixinJSBridgeReady', function() {
+          play();
+      }, false);
+      document.addEventListener("touchstart",play, false);
+    }
+    audioAutoPlay('myaudio');
+
   },
   methods: {
       startDrag(event){
@@ -84,9 +102,7 @@ body {
   background-color: rgba(196,1,9,1);
   background-image: -webkit-radial-gradient(center ellipse, rgba(196,1,9,0) 0%, rgba(118,0,0,1) 100%);
   background-image: radial-gradient(ellipse at center, rgba(196,1,9,0) 0%, rgba(118,0,0,1) 100%);
-  background-repeat: repeat-y;
-  background-position: top;
-  background-size: 100% auto;
+  background-size: 100% 100%;
   height: 100%;
 }
 
