@@ -8,14 +8,14 @@
 
     <!--<audio src="http://zw.wangchao.im/static/bgmusic.mp3" autoplay="true" loop="true"></audio>-->
 
-    <el-carousel :interval="4000" type="card" height="200px" class="my-carousel">
-      <el-carousel-item v-for="item in 6">
-        <img src="./assets/logo.png">
-      </el-carousel-item>
-    </el-carousel>
+    <!--<el-carousel indicator-position="outside" class="my-carousel">-->
+      <!--<el-carousel-item v-for="item in 6">-->
+        <!--<img src="./assets/logo.png">-->
+      <!--</el-carousel-item>-->
+    <!--</el-carousel>-->
 
-    <photo-wall ref="photowall"/>
-
+    <!--<photo-wall ref="photowall"/>-->
+    <router-view></router-view>
   </div>
 </template>
 
@@ -33,23 +33,23 @@ export default {
 
   },
   mounted () {
-    window.onscroll = this.onScroll
+    //window.onscroll = this.onScroll
   },
   methods: {
       startDrag(event){
-        this.$refs.photowall.startDrag(event, this.$el.getBoundingClientRect())
+        //this.$refs.photowall.startDrag(event, this.$el.getBoundingClientRect())
       },
 
       onDrag(event){
-        this.$refs.photowall.onDrag(event, this.$el.getBoundingClientRect())
+        //this.$refs.photowall.onDrag(event, this.$el.getBoundingClientRect())
       },
 
       endDrag(event){
-        this.$refs.photowall.endDrag(event, this.$el.getBoundingClientRect())
+        //this.$refs.photowall.endDrag(event, this.$el.getBoundingClientRect())
       },
 
       onScroll(){
-        this.$refs.photowall.onScroll(this.$el.getBoundingClientRect())
+        //this.$refs.photowall.onScroll(this.$el.getBoundingClientRect())
       }
 
   },
@@ -64,10 +64,11 @@ html {
   height: 100%;
 }
 
+  <!--background: url('./assets/bg.png');-->
+
 body {
   margin: 0px;
   padding: 0px;
-  background: url('./assets/bg.png');
   background-attachment: fixed;
   background-repeat: repeat-y;
   background-position: top;

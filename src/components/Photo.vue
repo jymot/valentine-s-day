@@ -3,7 +3,7 @@
       <div class="grid-content">
         <transition :name="animationDirection">
           <el-card v-show="show" :body-style="{ padding: '0px' }">
-            <img :src="image" class="image">
+            <img src="../assets/logo.png" class="image">
           </el-card>
         </transition>
       </div>
