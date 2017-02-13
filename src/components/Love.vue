@@ -15,8 +15,7 @@
 }
 .mask-container{
   height: 100%;
-  width:100%;
-  padding-top: 20px;
+  width: 100%;
   z-index: 10;
   position:absolute;
   display:flex;
@@ -30,9 +29,9 @@
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  overflow: hidden;
 }
 .head-img{
+  padding-top: 50px;
   width: 200px;
 }
 

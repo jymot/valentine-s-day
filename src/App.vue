@@ -6,8 +6,9 @@
        @touchmove="onDrag"
        @touchend="endDrag">
 
-    <audio ref="myaudio" src="./static/bgmusic.mp3" loop="true"></audio>
-
+    <audio controls="controls" ref="myaudio" loop="loop" style="display: none">
+      <source src="./static/bgmusic.mp3" type="audio/ogg" />
+    </audio>
     <!--<el-carousel indicator-position="outside" class="my-carousel">-->
       <!--<el-carousel-item v-for="item in 6">-->
         <!--<img src="./assets/logo.png">-->
@@ -19,7 +20,7 @@
 
     <div class="section1">
       <div class="section overlay">
-        <img src="./assets/hvd.svg" width="85%" alt="" class="svg"/>
+        <img src="./assets/hvd.svg" width="80%" alt="" class="svg"/>
       </div>
     </div>
 
@@ -44,6 +45,7 @@ export default {
   mounted () {
     //window.onscroll = this.onScroll
     this.$refs.myaudio.loop = true;
+    this.$refs.myaudio.src = "./static/bgmusic.mp3";
     this.$refs.myaudio.play();
   },
   methods: {
@@ -78,7 +80,7 @@ html {
 
 body {
   margin: 0px !important;
-  padding: 0px;
+  padding: 0px !important;
   background-color: rgba(196,1,9,1);
   background-image: -webkit-radial-gradient(center ellipse, rgba(196,1,9,0) 0%, rgba(118,0,0,1) 100%);
   background-image: radial-gradient(ellipse at center, rgba(196,1,9,0) 0%, rgba(118,0,0,1) 100%);
@@ -89,6 +91,8 @@ body {
 }
 
 #app {
+  margin: 0px !important;
+  padding: 0px !important;
   display: flex;
   flex-direction: column;
   height: 100%;
